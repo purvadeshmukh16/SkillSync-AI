@@ -71,7 +71,8 @@ st.markdown("""
 @st.cache_resource
 def load_models():
     try:
-        path              = "models"
+        import os
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models")
         mlb               = pickle.load(open(f"{path}/mlb.pkl",               "rb"))
         role_skill_matrix = pickle.load(open(f"{path}/role_skill_matrix.pkl", "rb"))
         salary_model      = pickle.load(open(f"{path}/salary_model.pkl",      "rb"))
