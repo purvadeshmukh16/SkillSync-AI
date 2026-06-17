@@ -282,7 +282,7 @@ ANSWER FORMAT RULES:
 # Build context once at startup (not cached with st.cache_data to avoid DataFrame hashing issues)
 DATASET_CONTEXT = build_dataset_context(df)
 
-groq_client = Groq(api_key=os.getenv("GROQ_API_KEY")
+groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 def chatbot_response(question):
     try:
